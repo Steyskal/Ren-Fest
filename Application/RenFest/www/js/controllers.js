@@ -35,9 +35,9 @@ angular.module('starter.controllers', [])
 
     .controller('SchedulesCtrl', function($scope){
         $scope.items = [
-            { id: 1, title: 'E1' },
-            { id: 2, title: 'E2' },
-            { id: 3, title: 'E3' }
+            { id: 1, time: '8:00', title: 'E1' },
+            { id: 2, time: '10:00', title: 'E2' },
+            { id: 3, time: '18:00', title: 'E3' }
         ];
     })
 

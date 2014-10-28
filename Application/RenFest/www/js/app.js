@@ -44,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/schedule",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/schedule.html"
+                        templateUrl: "templates/schedule.html",
+                        controller: 'SchedulesCtrl'
                     }
                 }
             })
@@ -54,8 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/schedule/:eventId",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/event.html",
-                        controller: 'SchedulesCtrl'
+                        templateUrl: "templates/event.html"
                     }
                 }
             })
