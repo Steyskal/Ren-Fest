@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/search",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/schedule.html"
         }
       }
     })
@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/browse",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/map.html"
         }
       }
     })
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/playlists",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
+          templateUrl: "templates/introduction.html",
           controller: 'PlaylistsCtrl'
         }
       }
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/playlists/:playlistId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
+          templateUrl: "templates/event.html",
           controller: 'PlaylistCtrl'
         }
       }
