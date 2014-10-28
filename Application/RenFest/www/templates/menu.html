@@ -1,52 +1,39 @@
 <ion-side-menus>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+        <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-right-left-ios7"></ion-nav-view>
+  </ion-pane>
 
-    <ion-pane ion-side-menu-content>
-        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-            <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Povratak</ion-nav-back-button>
-        </ion-nav-bar>
-        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
-    </ion-pane>
-
-    <ion-side-menu side="left">
-        <header class="bar bar-header bar-stable">
-            <h1 class="title">Izbornik</h1>
-        </header>
-        <ion-content class="has-header">
-            <ion-list>
-
-                <ion-item nav-clear menu-close href="#/app/introduction">
-                    Renesansni Festival
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/schedule">
-                    Raspored
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/map">
-                    Gdje smo?
-                </ion-item>
-
-                <!--<ion-item nav-clear menu-close ng-click="login()">-->
-                    <!--Login-->
-                <!--</ion-item>-->
-
-            </ion-list>
-        </ion-content>
-    </ion-side-menu>
-
-    <ion-side-menu side="right">
-        <header class="bar bar-header bar-stable">
-            <h1 class="title">Jezik</h1>
-        </header>
-        <ion-content class="has-header">
-            <ion-list class="text-center">
-
-                <ion-item nav-clear menu-close href="#">
-                    Engleski
-                </ion-item>
-                <ion-item nav-clear menu-close href="#">
-                    Hrvatski
-                </ion-item>
-
-            </ion-list>
-        </ion-content>
-    </ion-side-menu>
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Izbornik</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/home">
+          Renesansni festival
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/renaissance">
+          O renesansi
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/events">
+          Raspored programa
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/map">
+          Karta
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/sponsors">
+          Sponzori
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/aboutUs">
+          O nama
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/language">
+          Jezik
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
 </ion-side-menus>

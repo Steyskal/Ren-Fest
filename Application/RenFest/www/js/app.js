@@ -6,69 +6,95 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
-            if(window.cordova && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            }
-            if(window.StatusBar) {
-                // org.apache.cordova.statusbar required
-                StatusBar.styleDefault();
-            }
-        });
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+    .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "templates/menu.html"
     })
 
-    .config(function($stateProvider, $urlRouterProvider) {
-        $stateProvider
+    .state('app.home', {
+      url: "/home",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/home.html",
+            controller: 'PlaylistsCtrl' //netreba
+        }
+      }
+    })
 
-            .state('app', {
-                url: "/app",
-                abstract: true,
-                templateUrl: "templates/menu.html",
-                controller: 'AppCtrl'
-            })
+    .state('app.renaissance', {
+      url: "/renaissance",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/renaissance.html"
+        }
+      }
+    })
 
-            .state('app.introduction', {
-                url: "/introduction",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/introduction.html"
-//          controller: 'PlaylistsCtrl'
-                    }
-                }
-            })
+    .state('app.events', {
+      url: "/events",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/events.html"
+        }
+      }
+    })
 
-            .state('app.schedule', {
-                url: "/schedule",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/schedule.html",
-                        controller: 'SchedulesCtrl'
-                    }
-                }
-            })
+      .state('app.map', {
+          url: "/map",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/map.html"
+              }
+          }
+      })
+
+      .state('app.sponsors', {
+          url: "/sponsors",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/sponsors.html"
+              }
+          }
+      })
+
+      .state('app.aboutUs', {
+          url: "/aboutUs",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/aboutUs.html"
+              }
+          }
+      })
+
+      .state('app.language', {
+          url: "/language",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/language.html"
+              }
+          }
+      })
 
 
-            .state('app.event', {
-                url: "/schedule/:eventId",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/event.html"
-                    }
-                }
-            })
-
-            .state('app.map', {
-                url: "/map",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/map.html"
-                    }
-                }
-            });
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/introduction');
-    });
+  $urlRouterProvider.otherwise('/app/home');
+});
 
