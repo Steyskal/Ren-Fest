@@ -1,1 +1,25 @@
 /* Empty. Add your own CSS if you like */
+
+p{
+    margin: 1em;
+}
+
+.text-justified{
+    text-align: justify;
+}
+
+.box{
+    height: 20em;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.pink{
+    background-color: pink;
+}
