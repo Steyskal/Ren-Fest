@@ -1,27 +1,25 @@
+<!-- Swipe is not good for home screen from UX reasons
+  refactor, redesign pictures or include scrool and remove style:height -->
+
 <ion-view title="Renesansi festival">
-  <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-    <ion-list>
-        <ion-item href="#/app/renaissance">
-           O renesansi
-        </ion-item>
-        <ion-item href="#/app/events">
-           Raspored programa
-        </ion-item>
-        <ion-item href="#/app/map">
-           Karta
-        </ion-item>
-        <ion-item href="#/app/sponsors">
-           Sponzori
-        </ion-item>
-        <ion-item href="#/app/aboutUs">
-           O nama
-        </ion-item>
-        <ion-item href="#/app/language">
-           Jezik
-        </ion-item>
-    </ion-list>
-  </ion-content>
+    <ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header" scroll="false">
+                <div class="item item-image" style="height: 34%">
+                    <a href="#/app/renaissance">
+                        <img src="img/1.jpg" >
+                    </a>
+                </div>
+                <div class="item item-image" style="height: 34%" >
+                    <a href="#/app/events">
+                        <img src="img/3.jpg" >
+                    </a>
+                </div>
+                <div class="item item-image" style="height: 33%">
+                    <a href="#/app/map">
+                        <img src="img/2.jpg">
+                    </a>
+                </div>
+    </ion-content>
 </ion-view>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','tabSlideBox'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,47 +26,75 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
+      templateUrl: "templates/menu.html"
     })
 
-    .state('app.search', {
-      url: "/search",
+    .state('app.home', {
+      url: "/home",
       views: {
         'menuContent' :{
-          templateUrl: "templates/schedule.html"
-        }
-      }
-    })
-
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/map.html"
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/introduction.html",
-          controller: 'PlaylistsCtrl'
+            templateUrl: "templates/home.html",
+            controller: 'PlaylistsCtrl' //netreba
         }
       }
     })
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+    .state('app.renaissance', {
+      url: "/renaissance",
       views: {
         'menuContent' :{
-          templateUrl: "templates/event.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "templates/renaissance.html"
         }
       }
-    });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+    })
+
+    .state('app.events', {
+      url: "/events",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/events.html"
+        }
+      }
+    })
+
+      .state('app.map', {
+          url: "/map",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/map.html"
+              }
+          }
+      })
+
+      .state('app.sponsors', {
+          url: "/sponsors",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/sponsors.html"
+              }
+          }
+      })
+
+      .state('app.aboutUs', {
+          url: "/aboutUs",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/aboutUs.html"
+              }
+          }
+      })
+
+      .state('app.language', {
+          url: "/language",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/language.html"
+              }
+          }
+      })
+
+
+        // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/home');
 });
 
