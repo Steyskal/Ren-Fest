@@ -1,8 +1,19 @@
 <ion-view title="O renesansi">
-  <ion-nav-buttons side="right">
-    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-    <h1>O renesansi</h1>
-  </ion-content>
+    <ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true" slide-interval="5000">
+            <ion-slide>
+                <div class="box blue"><h1>BLUE</h1></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"><h1>YELLOW</h1></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"><h1>PINK</h1></div>
+            </ion-slide>
+        </ion-slide-box>
+        <p class="text-justified">Renesansni lalalal Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget convallis risus, sit amet porta nisi. Mauris venenatis accumsan neque eget blandit. Duis porttitor pharetra diam id elementum. Integer nec elit vel ante lacinia varius vel vitae nibh. Morbi purus tortor, maximus sed aliquet vitae, mattis quis dolor. Donec a cursus urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean interdum tempor enim, et hendrerit urna tempor sit amet. Donec pharetra, sem sit amet accumsan consequat, lectus nibh feugiat turpis, eget sollicitudin quam massa quis nulla. Phasellus condimentum justo iaculis, gravida ligula quis, euismod ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam a neque sed elit tincidunt ultricies placerat at ipsum. Mauris non posuere sem, sit amet semper leo.</p>
+    </ion-content>
 </ion-view>
