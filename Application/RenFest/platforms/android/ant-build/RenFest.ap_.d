@@ -42,7 +42,6 @@ C:\AirRenFest\Application\RenFest\platforms\android\assets\www\css\style.css \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\1.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\2.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\3.jpg \
-C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\4.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\ionic.png \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\js\app.js \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\js\controllers.js \
