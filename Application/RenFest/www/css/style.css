@@ -8,6 +8,22 @@ p{
     text-align: justify;
 }
 
+.bold{
+    font-weight: bold;
+}
+
+.ren_letter{
+    /* styling if needed - depends on design */
+    height: 50px;
+    width: 50px;
+}
+
+.centered{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .box{
     height: 20em;
 }
