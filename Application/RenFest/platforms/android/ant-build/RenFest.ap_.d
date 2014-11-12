@@ -43,6 +43,8 @@ C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\1.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\2.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\3.jpg \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\ionic.png \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\R.png \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\img\tz-logo-transparent.png \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\js\app.js \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\js\controllers.js \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\lib\Firebase \
@@ -120,11 +122,14 @@ C:\AirRenFest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\io
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-variables.scss \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\com.ionic.keyboard \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.device \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\com.ionic.keyboard\www \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
-C:\AirRenFest\Application\RenFest\platforms\android\assets\www\templates\aboutUs.html \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js \
+C:\AirRenFest\Application\RenFest\platforms\android\assets\www\templates\contact.html \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\templates\events.html \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\templates\home.html \
 C:\AirRenFest\Application\RenFest\platforms\android\assets\www\templates\language.html \

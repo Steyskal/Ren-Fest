@@ -7,9 +7,10 @@
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+     $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -19,6 +20,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
 })
+
+
+
+    /*Web/databaseService.done().then(function(data){
+        $cordovaSplashscreen.hide();
+     }*/
+
+    /*app.run(function(MyDataService) {
+     MyDataService.getThings().then(function(data) {
+     $cordovaSplashscreen.hide()
+     })
+     })*/
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -75,11 +88,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
       })
 
-      .state('app.aboutUs', {
-          url: "/aboutUs",
+      .state('app.contact', {
+          url: "/contact",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/aboutUs.html"
+                  templateUrl: "templates/contact.html"
               }
           }
       })
@@ -92,7 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
-
 
         // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
