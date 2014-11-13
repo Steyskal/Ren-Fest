@@ -1,9 +1,5 @@
 /* Empty. Add your own CSS if you like */
 
-p{
-    margin: 1em;
-}
-
 .text-justified{
     text-align: justify;
 }
@@ -48,18 +44,45 @@ p{
     font-style: italic;
     color: rgb(105,45,45);
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0.357em; /* 5px */
 }
 
 .renaissanceSubheader{
-    margin: 10px;
     font-family: Monotype Corsiva;
     font-style: italic;
     color: rgb(40, 0, 0);
+}
+
+.renaissanceText{
+    margin: 1em;
+    font-family: Sans;
+}
+
+.renaissanceUnderline{
+    margin: 0.357em; /* 5px */
     border: solid;
     border-color: black;
-    border-width: 1px;
+    border-width: 0.1em;
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+/* CONTACT TEMPLATE */
+.contactInformation{
+    position: relative;
+    margin-top: 3em; /* 42px */
+    width: 95%;     /* otherwise the margin of the div row exceeds the right end of the screen */
+}
+
+.contactText{
+    font-family: Sans;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+/* FOOTER */
+.footerImg{
+    height: 43px;
 }

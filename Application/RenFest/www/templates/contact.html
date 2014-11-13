@@ -4,12 +4,36 @@
     </ion-nav-buttons>
     <ion-content class="has-header" ng-controller="ContactCtrl">
 
-        <img src="img/tz-logo-transparent.png" class="centered">
+        <img src="img/contact1.jpg" class="renaissanceImg">
+
+        <h1 class="renaissanceHeader">{{header.content}}</h1>
+
         <div ng-repeat="contact in contacts">
-            <p><m class="bold">{{contact.title}}</m><br>{{contact.information}}</p>
+            <div class="row renaissanceUnderline contactInformation">
+                <div class="col-33">
+                    <h3 class="renaissanceSubheader contactText">{{contact.title}}</h3>
+                </div>
+                <div class="col-67">
+                    <p class="contactText">{{contact.information}}</p>
+                </div>
+            </div>
         </div>
-        <p><m class="bold">{{website.web}}</m><br><a href={{website.url1}}>{{website.site1}}</a><br>
-            <a href={{website.url2}}>{{website.site2}}</a></p>
+
+        <div class="row row-bottom renaissanceUnderline contactInformation">
+            <div class="col-33">
+                <h3 class="renaissanceSubheader contactText">{{website.web}}</h3>
+            </div>
+            <div class="col-67 contactText">
+                <a href={{website.url1}}>{{website.site1}}</a><br>
+                <a href={{website.url2}}>{{website.site2}}</a>
+            </div>
+        </div>
+
+        <div class="bar">
+            <a class="centered" href="#/app/home">
+                <img class="footerImg" src="img/logo.jpg">
+            </a>
+        </div>
 
     </ion-content>
 </ion-view>

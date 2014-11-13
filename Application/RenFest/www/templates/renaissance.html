@@ -4,14 +4,21 @@
     </ion-nav-buttons>
     <ion-content class="has-header" ng-controller="RenaissanceCtrl">
 
-        <img class="renaissanceImg" src="../img/renaissance1.jpg">
+        <img class="renaissanceImg" src="img/renaissance1.jpg">
 
         <h1 class="renaissanceHeader">{{header.content}}</h1>
 
         <div ng-repeat="item in information">
-            <h3 class="renaissanceSubheader">{{item.title}}</h3>
+            <h3 class="renaissanceSubheader renaissanceUnderline">{{item.title}}</h3>
             <p class="renaissanceText text-justified">{{item.content}}</p>
+        </div>
+
+        <div class="bar">
+            <a class="centered" href="#/app/home">
+                <img class="footerImg" src="img/logo.jpg">
+            </a>
         </div>
 
     </ion-content>
 </ion-view>
+
