@@ -21,8 +21,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-
-
     /*Web/databaseService.done().then(function(data){
         $cordovaSplashscreen.hide();
      }*/
@@ -46,8 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/home",
       views: {
         'menuContent' :{
-            templateUrl: "templates/home.html",
-            controller: 'PlaylistsCtrl' //netreba
+            templateUrl: "templates/home.html"
         }
       }
     })
@@ -92,7 +89,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           url: "/contact",
           views: {
               'menuContent' :{
-                  templateUrl: "templates/contact.html"
+                  templateUrl: "templates/contact.html",
+                  controller: 'ContactCtrl'
               }
           }
       })

@@ -13,7 +13,7 @@
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen" />
+  <preference name="SplashScreen" value="welcome" />
   <preference name="SplashScreenDelay" value="3000" />
   <preference name="auto-hide-splash-screen" value="false" />
   <feature name="StatusBar">
