@@ -6,23 +6,23 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
-     $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+    .run(function($ionicPlatform) {
+        $ionicPlatform.ready(function() {
+            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+            // for form inputs)
 
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
+            if(window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            }
+            if(window.StatusBar) {
+                // org.apache.cordova.statusbar required
+                StatusBar.styleDefault();
+            }
+        });
+    })
 
     /*Web/databaseService.done().then(function(data){
-        $cordovaSplashscreen.hide();
+     $cordovaSplashscreen.hide();
      }*/
 
     /*app.run(function(MyDataService) {
@@ -31,80 +31,81 @@ angular.module('starter', ['ionic', 'starter.controllers'])
      })
      })*/
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+    .config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
 
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html"
-    })
+            .state('app', {
+                url: "/app",
+                abstract: true,
+                templateUrl: "templates/menu.html"
+            })
 
-    .state('app.home', {
-      url: "/home",
-      views: {
-        'menuContent' :{
-            templateUrl: "templates/home.html"
-        }
-      }
-    })
+            .state('app.home', {
+                url: "/home",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/home.html"
+                    }
+                }
+            })
 
-    .state('app.renaissance', {
-      url: "/renaissance",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/renaissance.html"
-        }
-      }
-    })
+            .state('app.renaissance', {
+                url: "/renaissance",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/renaissance.html",
+                        controller: "RenaissanceCtrl"
+                    }
+                }
+            })
 
-    .state('app.events', {
-      url: "/events",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/events.html"
-        }
-      }
-    })
+            .state('app.events', {
+                url: "/events",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/events.html"
+                    }
+                }
+            })
 
-      .state('app.map', {
-          url: "/map",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/map.html"
-              }
-          }
-      })
+            .state('app.map', {
+                url: "/map",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/map.html"
+                    }
+                }
+            })
 
-      .state('app.sponsors', {
-          url: "/sponsors",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/sponsors.html"
-              }
-          }
-      })
+            .state('app.sponsors', {
+                url: "/sponsors",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/sponsors.html"
+                    }
+                }
+            })
 
-      .state('app.contact', {
-          url: "/contact",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/contact.html",
-                  controller: 'ContactCtrl'
-              }
-          }
-      })
+            .state('app.contact', {
+                url: "/contact",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/contact.html",
+                        controller: 'ContactCtrl'
+                    }
+                }
+            })
 
-      .state('app.language', {
-          url: "/language",
-          views: {
-              'menuContent' :{
-                  templateUrl: "templates/language.html"
-              }
-          }
-      })
+            .state('app.language', {
+                url: "/language",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "templates/language.html"
+                    }
+                }
+            })
 
         // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
-});
+        $urlRouterProvider.otherwise('/app/home');
+    });
 
