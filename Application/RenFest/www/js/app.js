@@ -3,13 +3,17 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
 
-    .run(function($ionicPlatform) {
+angular.module('starter', ['ionic',
+    'localStorage.services',
+    'firebase.services',
+    'contact.controllers',
+    'renaissance.controllers'
+    ])
+
+    .run(function($ionicPlatform,$ionicPopup,FirebaseService,localStorageService) {
         $ionicPlatform.ready(function() {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
+
 
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -18,18 +22,41 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            //check if exist data in localStorage
+            if(localStorageService.getData()==null){
+                //if not exist check interent connection
+                if(window.Connection) {
+                    //turn on internet
+                    if(navigator.connection.type == Connection.NONE) {
+                        $ionicPopup.alert({
+                            title: "Uključite internet",
+                            content: "Prilikom prvog korištenja molimo vas da uključite internet."
+                        });
+                    //fetch data
+                    }else{
+                        FirebaseService.getData().then(function(data){
+                            localStorageService.setData(data);
+                            localStorageService.setContacts(data.$getRecord('contacts'));
+                            localStorageService.setRenaissance(data.$getRecord('renaissance'));
+                        });
+                    }
+                }
+                //update data
+            }else{
+                if(window.Connection) {
+                    if(navigator.connection.type != Connection.NONE) {
+                        FirebaseService.getData().then(function(data){
+                            localStorageService.setData(data);
+                            localStorageService.setContacts(data.$getRecord('contacts'));
+                            localStorageService.setRenaissance(data.$getRecord('renaissance'));
+                        });
+                    }
+                }
+            }
+
         });
     })
-
-    /*Web/databaseService.done().then(function(data){
-     $cordovaSplashscreen.hide();
-     }*/
-
-    /*app.run(function(MyDataService) {
-     MyDataService.getThings().then(function(data) {
-     $cordovaSplashscreen.hide()
-     })
-     })*/
 
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -53,7 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/renaissance",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/renaissance.html",
+                        templateUrl: "components/renaissance/renaissance.html",
                         controller: "RenaissanceCtrl"
                     }
                 }
@@ -63,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/events",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/events.html"
+                        templateUrl: "components/events/events.html"
                     }
                 }
             })
@@ -72,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/map",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/map.html"
+                        templateUrl: "components/map/map.html"
                     }
                 }
             })
@@ -81,7 +108,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/sponsors",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/sponsors.html"
+                        templateUrl: "components/sponsors/sponsors.html"
                     }
                 }
             })
@@ -90,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 url: "/contact",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/contact.html",
+                        templateUrl: "components/contact/contact.html",
                         controller: 'ContactCtrl'
                     }
                 }

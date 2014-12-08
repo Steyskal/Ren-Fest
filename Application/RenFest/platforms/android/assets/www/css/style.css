@@ -1,9 +1,5 @@
 /* Empty. Add your own CSS if you like */
 
-p{
-    margin: 1em;
-}
-
 .text-justified{
     text-align: justify;
 }
@@ -12,32 +8,10 @@ p{
     font-weight: bold;
 }
 
-.ren_letter{
-    /* styling if needed - depends on design */
-    height: 50px;
-    width: 50px;
-}
-
 .centered{
     display: block;
     margin-right: auto;
     margin-left: auto;
-}
-
-.box{
-    height: 20em;
-}
-
-.blue{
-    background-color: blue;
-}
-
-.yellow{
-    background-color: yellow;
-}
-
-.pink{
-    background-color: pink;
 }
 
 .imageContainer{
@@ -58,4 +32,57 @@ p{
 .imageContainer2 img{
     width: auto;
     height: 100%;
+}
+
+/* RENAISSANCE TEMPLATE */
+.renaissanceImg{
+    width: 100%;
+}
+
+.renaissanceHeader{
+    font-family: Monotype Corsiva;
+    font-style: italic;
+    color: rgb(105,45,45);
+    text-align: center;
+    margin-top: 0.357em; /* 5px */
+}
+
+.renaissanceSubheader{
+    font-family: Monotype Corsiva;
+    font-style: italic;
+    color: rgb(40, 0, 0);
+}
+
+.renaissanceText{
+    margin: 1em;
+    font-family: Sans;
+}
+
+.renaissanceUnderline{
+    margin: 0.357em; /* 5px */
+    border: solid;
+    border-color: black;
+    border-width: 0.1em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* CONTACT TEMPLATE */
+.contactInformation{
+    position: relative;
+    margin-top: 3em; /* 42px */
+    width: 95%;     /* otherwise the margin of the div row exceeds the right end of the screen */
+}
+
+.contactText{
+    font-family: Sans;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+/* FOOTER */
+.footerImg{
+    height: 43px;
 }
