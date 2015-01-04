@@ -7,49 +7,28 @@
     </ion-pane>
 
     <ion-side-menu side="right">
-        <header class="bar bar-header bar-stable">
-            <h1 class="title">Izbornik</h1>
+        <header class="bar bar-header  bar-stable ">
+            <h1 class="title">{{"menu_name" | translate}}</h1>
         </header>
         <ion-content class="has-header">
             <ion-list>
                 <ion-item nav-clear menu-close href="#/app/home">
-                    Renesansni festival
+                    {{"menu_ren_fest" | translate}}
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/renaissance" class="col-offset-10">
-                    O renesansi
+                    {{"menu_about_ren_fest" | translate}}
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/events" class="col-offset-10">
-                    Raspored programa
+                <ion-item nav-clear menu-close href="#/app/events/day1/day1" class="col-offset-10">
+                    {{"menu_event" | translate}}
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/map" class="col-offset-10">
-                    Karta
+                    {{"menu_map" | translate}}
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/sponsors">
-                    Sponzori
+                    {{"menu_sponsors" | translate}}
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/contact">
-                    Kontakt
-                </ion-item>
-                <ion-item>
-                    Jezik
-                    <div class="list">
-
-                        <label class="item item-radio">
-                            <input type="radio" name="group" checked>
-                            <div class="item-content">
-                                Hrvatski
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-                        <label class="item item-radio">
-                            <input type="radio" name="group">
-                            <div class="item-content">
-                                Engleski
-                            </div>
-                            <i class="radio-icon ion-checkmark"></i>
-                        </label>
-
-                    </div>
+                    {{"menu_contact" | translate}}
                 </ion-item>
             </ion-list>
         </ion-content>

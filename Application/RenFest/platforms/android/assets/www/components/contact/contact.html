@@ -1,4 +1,4 @@
-<ion-view title="Kontakt">
+<ion-view title="{{'menu_contact' | translate}}">
     <ion-nav-buttons side="right">
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
@@ -6,9 +6,9 @@
 
         <img src="img/contact1.jpg" class="renaissanceImg">
 
-        <h1 class="renaissanceHeader">{{header.content}}</h1>
+        <h1 class="renaissanceHeader">{{header}}</h1>
 
-        <div ng-repeat="contact in contacts">
+        <div ng-repeat="contact in contacts | limitTo:5">
             <div class="row renaissanceUnderline contactInformation">
                 <div class="col-33">
                     <h3 class="renaissanceSubheader contactText">{{contact.title}}</h3>

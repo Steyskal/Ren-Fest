@@ -1,4 +1,4 @@
-<ion-view title="O renesansi">
+<ion-view title="{{'menu_about_ren_fest' | translate}}">
     <ion-nav-buttons side="right">
         <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
@@ -6,9 +6,9 @@
 
         <img class="renaissanceImg" src="img/renaissance1.jpg">
 
-        <h1 class="renaissanceHeader">{{header.content}}</h1>
+        <h1 class="renaissanceHeader">{{header}}</h1>
 
-        <div ng-repeat="item in renaissance">
+        <div ng-repeat="item in renaissance | limitTo:2">
             <h3 class="renaissanceSubheader renaissanceUnderline">{{item.title}}</h3>
             <p class="renaissanceText text-justified">{{item.information}}</p>
         </div>

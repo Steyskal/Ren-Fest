@@ -1,0 +1,22 @@
+<ion-view ng-controller="EventsDaysCtrl" view-title="{{day | translate}}">
+    <ion-content  >
+        <ion-list >
+            <div ng-repeat="item in events" class="item-text-wrap">
+                    <ion-item ng-if="item.divider!='null'" class="item-divider">{{item.divider}}</ion-item>
+                    <ion-item ng-if="item.details=='null'" class="item-thumbnail-left">
+                        <img ng-src="{{item.img}}">
+                        <p>{{item.time}}</p>
+                        <h2>{{item.title}}</h2>
+                        <p ng-if="item.description!='null'">{{item.description}}</p>
+                    </ion-item>
+                    <ion-item ng-if="item.details!='null'" ng-href="#/app/events/{{day}}/{{item.description}}/{{item.details}}/{{item.time}}/{{item.title}}/{{item.img}}/{{item.img2}}" class="item-thumbnail-left item-icon-right">
+                        <img ng-src="http://goo.gl/{{item.img}}">
+                        <p>{{item.time}}</p>
+                        <h2 class="text-left item-text-wrap">{{item.title}}</h2>
+                        <p ng-if="item.description!='null'">{{item.description}}</p>
+                        <i ng-if="item.details!='null'" class="icon ion-chevron-right energized"></i>
+                    </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
