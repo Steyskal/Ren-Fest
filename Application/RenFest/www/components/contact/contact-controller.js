@@ -1,14 +1,9 @@
 
-angular.module('contact.controllers', ['localStorage.services'])
+angular.module('contact.controllers', ['localStorage.services','data.services'])
 
-    .controller('ContactCtrl',['$scope','LocalStorageService',
-            function($scope,LocalStorageService) {
-
-                $scope.contacts=[];
+    .controller('ContactCtrl',['$scope','LocalStorageService','DataService',
+            function($scope,LocalStorageService,DataService) {
                 var contactsData=LocalStorageService.getContacts();
-
-                angular.forEach(contactsData,function(value,key){
-                    key=="header"? $scope.header=value : $scope.contacts.push(value);
-                });
+                $scope.contacts=DataService.getData(contactsData);
             }
         ]);

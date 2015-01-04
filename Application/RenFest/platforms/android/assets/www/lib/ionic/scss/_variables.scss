@@ -11,7 +11,7 @@ $energized:                       #f0b840 !default;
 $assertive:                       #ef4e3a !default;
 $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
-$proba:                           #194512 !default;
+$air:                             #154509 !default;
 
 // Base
 // -------------------------------
@@ -152,6 +152,11 @@ $button-default-border:           $button-stable-border !default;
 $button-default-active-bg:        $button-stable-active-bg !default;
 $button-default-active-border:    $button-stable-active-border !default;
 
+$button-air-bg:                  $air !default;
+$button-air-text:                #fff !default;
+$button-air-border:              #111 !default;
+$button-air-active-bg:           #262626 !default;
+$button-air-active-border:       #001 !default;
 
 // Bars
 // -------------------------------
@@ -222,6 +227,11 @@ $bar-default-border:              $bar-light-border !default;
 $bar-default-active-bg:           $bar-light-active-bg !default;
 $bar-default-active-border:       $bar-light-active-border !default;
 
+$bar-air-bg:                     rgba($button-air-bg, $bar-transparency) !default;
+$bar-air-text:                   $button-air-text !default;
+$bar-air-border:                 $button-air-border !default;
+$bar-air-active-bg:              $button-air-active-bg !default;
+$bar-air-active-border:          $button-air-active-border !default;
 
 // Tabs
 // -------------------------------

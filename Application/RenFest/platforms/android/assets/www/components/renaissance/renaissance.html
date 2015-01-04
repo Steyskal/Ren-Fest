@@ -1,24 +1,26 @@
 <ion-view title="{{'menu_about_ren_fest' | translate}}">
-    <ion-nav-buttons side="right">
-        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
     <ion-content class="has-header" ng-controller="RenaissanceCtrl">
-
-        <img class="renaissanceImg" src="img/renaissance1.jpg">
-
-        <h1 class="renaissanceHeader">{{header}}</h1>
-
-        <div ng-repeat="item in renaissance | limitTo:2">
+       <!-- <div ng-repeat="item in renaissance">
+            <img ng-if="item.img!='null'" class="renaissanceImg" ng-src={{item.img}}>
+            <h2 ng-if="item.header!='null'" class="renaissanceHeader">{{item.header}}</h2>
             <h3 class="renaissanceSubheader renaissanceUnderline">{{item.title}}</h3>
             <p class="renaissanceText text-justified">{{item.information}}</p>
         </div>
-
         <div class="bar">
             <a class="centered" href="#/app/home">
                 <img class="footerImg" src="img/logo.jpg">
             </a>
+        </div>  -->
+        <div ng-repeat="item in renaissance">
+            <img ng-if="item.img!='null'" ng-src="{{item.img}}" class="renaissanceImg">
+            <h2 ng-if="item.header!='null'" class="text-center">{{item.header}}</h2>
+            <!--<ion-item class="item-divider item-energized">{{item.title}}</ion-item>-->
+            <ion-item class="item item-text-wrap">
+                <h2>{{item.title}}:</h2>
+                <p>{{item.information}}</p>
+            </ion-item>
         </div>
-
+        <img class="centered footerImg" src="img/logo.jpg">
     </ion-content>
 </ion-view>
 

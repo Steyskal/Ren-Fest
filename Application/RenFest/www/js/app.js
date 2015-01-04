@@ -2,9 +2,9 @@
 angular.module('starter', ['ionic',
     'localStorage.services',
     'firebase.services',
+    'data.services',
     'contact.controllers',
     'renaissance.controllers',
-    'events.services',
     'events.controllers',
     'eventsDays.controllers',
     'eventsDayDetails.controllers',
@@ -16,35 +16,37 @@ angular.module('starter', ['ionic',
         $ionicPlatform.ready(function() {
 
             //localization
-            LocalizationService.getLanguage().then(function(data){
-                LocalizationService.setLanguage(data);
-
-                //TODO:refactor
-                //check if exist data in localStorage
-                if(LocalStorageService.getData()==null){
-                    //if not exist check internet connection
-                    if(window.Connection) {
-                        //fetch data
-                        if(navigator.connection.type != Connection.NONE) {
-                            FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
-                                LocalStorageService.setData(data);
-                                LocalStorageService.setContacts(data.$getRecord('contacts'));
-                                LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
-                                LocalStorageService.setEvents(data.$getRecord('events'));
-                            });
-                            //turn on internet
-                        }else{
-                            $ionicPopup.alert({
-                                title:"Internet",
-                                content:"{{'content'| translate}}"
-                            }).then(function(res){
-                                if(res)
-                                    navigator.app.exitApp();
-                            });
+            LocalizationService.getLanguage()
+                .then(function(data){
+                    LocalizationService.setLanguage(data);
+                 })
+                .then(function(){
+                    //TODO:refactor
+                    //check if exist data in localStorage
+                    if(LocalStorageService.getData()==null){
+                        //if not exist check internet connection
+                        if(window.Connection) {
+                            //fetch data
+                            if(navigator.connection.type != Connection.NONE) {
+                                FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
+                                    LocalStorageService.setData(data);
+                                    LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
+                                    LocalStorageService.setEvents(data.$getRecord('events'));
+                                });
+                                //turn on internet
+                            }else{
+                                $ionicPopup.alert({
+                                    title:"Internet",
+                                    content:"{{'content'| translate}}"
+                                }).then(function(res){
+                                    if(res)
+                                        navigator.app.exitApp();
+                                });
+                            }
                         }
                     }
-                }
-            });
+                });
 
             //update data
             if(LocalStorageService.getData()!=null){
@@ -115,7 +117,7 @@ angular.module('starter', ['ionic',
                 url: "/day1/:day",
                 views: {
                     'tab-day1' :{
-                        templateUrl: "components/events/tab-days.html",
+                        templateUrl: "components/events/events-days.html",
                         controller: "EventsDaysCtrl"
                     }
                 }
@@ -125,7 +127,7 @@ angular.module('starter', ['ionic',
                 url: "/day1/:description/:details/:time/:title/:img/:img2",
                 views: {
                     'tab-day1' :{
-                        templateUrl: "components/events/tab-days-details.html",
+                        templateUrl: "components/events/events-days-details.html",
                         controller: "EventsDayDetailsCtrl"
                     }
                 }
@@ -135,7 +137,7 @@ angular.module('starter', ['ionic',
                 url: "/day2/:day",
                 views: {
                     'tab-day2' :{
-                        templateUrl: "components/events/tab-days.html",
+                        templateUrl: "components/events/events-days.html",
                         controller: "EventsDaysCtrl"
                     }
                 }
@@ -145,7 +147,7 @@ angular.module('starter', ['ionic',
                 url: "/day2/:description/:details/:time/:title/:img/:img2",
                 views: {
                     'tab-day2' :{
-                        templateUrl: "components/events/tab-days-details.html",
+                        templateUrl: "components/events/events-days-details.html",
                         controller: "EventsDaysCtrl"
                     }
                 }
@@ -155,7 +157,7 @@ angular.module('starter', ['ionic',
                 url: "/day3/:day",
                 views: {
                     'tab-day3' :{
-                        templateUrl: "components/events/tab-days.html",
+                        templateUrl: "components/events/events-days.html",
                         controller: "EventsDaysCtrl"
                     }
                 }
@@ -165,7 +167,7 @@ angular.module('starter', ['ionic',
                 url: "/day3/:description/:details/:time/:title/:img/:img2",
                 views: {
                     'tab-day3' :{
-                        templateUrl: "components/events/tab-days-details.html",
+                        templateUrl: "components/events/events-days-details.html",
                         controller: "EventsDayDetailsCtrl"
                     }
                 }

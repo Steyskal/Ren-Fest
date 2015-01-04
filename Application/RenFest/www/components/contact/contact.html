@@ -1,39 +1,35 @@
 <ion-view title="{{'menu_contact' | translate}}">
-    <ion-nav-buttons side="right">
-        <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
     <ion-content class="has-header" ng-controller="ContactCtrl">
-
-        <img src="img/contact1.jpg" class="renaissanceImg">
-
-        <h1 class="renaissanceHeader">{{header}}</h1>
-
-        <div ng-repeat="contact in contacts | limitTo:5">
+      <!--  <div ng-repeat="item in contacts">
+            <img ng-if="item.img!='null'" ng-src="{{item.img}}" class="renaissanceImg">
+            <h2 ng-if="item.header!='null'" class="renaissanceHeader">{{item.header}}</h2>
             <div class="row renaissanceUnderline contactInformation">
                 <div class="col-33">
-                    <h3 class="renaissanceSubheader contactText">{{contact.title}}</h3>
+                    <h3 class="renaissanceSubheader contactText">{{item.title}}</h3>
                 </div>
                 <div class="col-67">
-                    <p class="contactText">{{contact.information}}</p>
+                    <p class="contactText">{{item.information}}</p>
                 </div>
             </div>
         </div>
-<!--
-        <div class="row row-bottom renaissanceUnderline contactInformation">
-            <div class="col-33">
-                <h3 class="renaissanceSubheader contactText">Web</h3>
-            </div>
-            <div class="col-67 contactText">
-                <a href={{website.url1}}>{{website.site1}}</a><br>
-                <a href={{website.url2}}>{{website.site2}}</a>
-            </div>
-        </div>
--->
         <div class="bar">
             <a class="centered" href="#/app/home">
                 <img class="footerImg" src="img/logo.jpg">
             </a>
+        </div>  -->
+        <div ng-repeat="item in contacts">
+            <img ng-if="item.img!='null'" ng-src="{{item.img}}" class="renaissanceImg">
+            <h2 ng-if="item.header!='null'" class="text-center">{{item.header}}</h2>
+            <ion-item class="item item-icon-left ">
+                <i ng-if="item.title=='Address' || item.title=='Adresa'" class="icon ion-home energized"></i>
+                <i ng-if="item.title=='Telephone' || item.title=='Telefon'" class="icon ion-iphone energized"></i>
+                <i ng-if="item.title=='Email'" class="icon ion-email energized"></i>
+                <i ng-if="item.title=='Fax'" class="icon ion-printer energized"></i>
+                <i ng-if="item.title=='Web'" class="icon ion-wifi energized"></i>
+                {{item.title}}:
+                <span class="item-note text-center">{{item.information}}</span>
+            </ion-item>
         </div>
-
+        <img class="centered footerImg" src="img/logo.jpg">
     </ion-content>
 </ion-view>

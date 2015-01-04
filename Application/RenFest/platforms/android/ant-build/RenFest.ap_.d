@@ -40,6 +40,7 @@ C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\plugins \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\templates \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\contact \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\data \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\home \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\language \
@@ -51,13 +52,13 @@ C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\component
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\webService \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\contact\contact-controller.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\contact\contact.html \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\data\data-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-controller.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-controller.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-details-controller.js \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-service.js \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-details.html \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events.html \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\tab-days-details.html \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\tab-days.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\localization\localization-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\localStorage\localStorge-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\map\map.html \
@@ -66,13 +67,10 @@ C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\component
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\sponsors\sponsors.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\webService\firebase-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\css\style.css \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\contact1.jpg \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\ionic.png \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\logo.jpg \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\mjestoDogadaja.png \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\oRenesansi.png \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\program.png \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\renaissance1.jpg \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\img\tz-logo-transparent.png \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\js\app.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\angular \
@@ -154,6 +152,7 @@ C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\js\ionic.bundle.min.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\js\ionic.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\js\ionic.min.js \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\ionic.css \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\ionic.scss \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\ionicons \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\lib\ionic\scss\_action-sheet.scss \

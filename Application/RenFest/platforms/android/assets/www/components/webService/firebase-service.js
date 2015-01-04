@@ -1,6 +1,6 @@
 angular.module('firebase.services', ['firebase'])
-    .factory('FirebaseService',['$q','$rootScope','$firebase',
-            function($q, $rootScope, $firebase) {
+    .factory('FirebaseService',['$q','$firebase',
+            function($q,$firebase) {
                 return {
                     getData: function(lang) {
                         var URL="https://renfest.firebaseio.com/"+lang;

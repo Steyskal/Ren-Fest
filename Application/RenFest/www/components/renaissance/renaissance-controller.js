@@ -1,16 +1,9 @@
 
-angular.module('renaissance.controllers', ['localStorage.services'])
+angular.module('renaissance.controllers', ['localStorage.services','data.services'])
 
-    .controller('RenaissanceCtrl',['$scope','LocalStorageService',
-            function($scope,LocalStorageService){
-
-                $scope.renaissance=[];
+    .controller('RenaissanceCtrl',['$scope','LocalStorageService','DataService',
+            function($scope,LocalStorageService,DataService){
                 var renaissanceData=LocalStorageService.getRenaissance();
-
-                angular.forEach(renaissanceData,function(value,key){
-                    key=="header"? $scope.header=value : $scope.renaissance.push(value);
-
-                });
-
+                $scope.renaissance=DataService.getData(renaissanceData);
             }
         ]);
