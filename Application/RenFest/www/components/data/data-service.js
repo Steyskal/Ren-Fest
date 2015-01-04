@@ -31,6 +31,15 @@ angular.module('data.services', [])
                         data.push(value);
                     });
                     return data;
+                },
+                getEventsDetailsData:function(retrievedData){
+                    var data=[];
+                    angular.forEach(retrievedData,function(information,key){
+                        angular.forEach(information,function(value,key){
+                            data.push(value);
+                        });
+                    });
+                    return data;
                 }
             }
     });
