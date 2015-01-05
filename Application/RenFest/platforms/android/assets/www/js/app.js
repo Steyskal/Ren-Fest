@@ -6,8 +6,7 @@ angular.module('starter', ['ionic',
     'contact.controllers',
     'renaissance.controllers',
     'events.controllers',
-    'eventsDays.controllers',
-    'eventsDayDetails.controllers',
+    'eventsDetails.controllers',
     'localization.services',
     'pascalprecht.translate'
     ])
@@ -15,15 +14,14 @@ angular.module('starter', ['ionic',
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
         $ionicPlatform.ready(function() {
 
-            //localization
-            LocalizationService.getLanguage()
-                .then(function(data){
-                    LocalizationService.setLanguage(data);
-                 })
-                .then(function(){
-                    //TODO:refactor
-                    //check if exist data in localStorage
-                    if(LocalStorageService.getData()==null){
+            //check if exist data in localStorage
+            if(LocalStorageService.getData()==null){
+                //localization
+                LocalizationService.getLanguage()
+                    .then(function(data){
+                        LocalizationService.setLanguage(data);
+                    })
+                    .then(function(){
                         //if not exist check internet connection
                         if(window.Connection) {
                             //fetch data
@@ -45,8 +43,8 @@ angular.module('starter', ['ionic',
                                 });
                             }
                         }
-                    }
-                });
+                    })
+            }
 
             //update data
             if(LocalStorageService.getData()!=null){
@@ -107,8 +105,7 @@ angular.module('starter', ['ionic',
                 abstract:true,
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/events/events.html",
-                        controller: "EventsCtrl"
+                        templateUrl: "components/events/events.html"
                     }
                 }
             })
@@ -118,7 +115,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day1' :{
                         templateUrl: "components/events/events-days.html",
-                        controller: "EventsDaysCtrl"
+                        controller: "EventsCtrl"
                     }
                 }
             })
@@ -128,7 +125,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day1' :{
                         templateUrl: "components/events/events-days-details.html",
-                        controller: "EventsDayDetailsCtrl"
+                        controller: "EventsDetailsCtrl"
                     }
                 }
             })
@@ -138,7 +135,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day2' :{
                         templateUrl: "components/events/events-days.html",
-                        controller: "EventsDaysCtrl"
+                        controller: "EventsCtrl"
                     }
                 }
             })
@@ -148,7 +145,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day2' :{
                         templateUrl: "components/events/events-days-details.html",
-                        controller: "EventsDaysCtrl"
+                        controller: "EventsDetailsCtrl"
                     }
                 }
             })
@@ -158,7 +155,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day3' :{
                         templateUrl: "components/events/events-days.html",
-                        controller: "EventsDaysCtrl"
+                        controller: "EventsCtrl"
                     }
                 }
             })
@@ -168,7 +165,7 @@ angular.module('starter', ['ionic',
                 views: {
                     'tab-day3' :{
                         templateUrl: "components/events/events-days-details.html",
-                        controller: "EventsDayDetailsCtrl"
+                        controller: "EventsDetailsCtrl"
                     }
                 }
             })

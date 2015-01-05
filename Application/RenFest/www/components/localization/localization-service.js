@@ -27,9 +27,6 @@ angular.module('localization.services',['localStorage.services'])
                         case "hr":
                             LocalStorageService.setLanguage(lang);
                             break;
-                        case "en":
-                            LocalStorageService.setLanguage(lang);
-                            break;
                         default :
                             LocalStorageService.setLanguage("en");
                     }

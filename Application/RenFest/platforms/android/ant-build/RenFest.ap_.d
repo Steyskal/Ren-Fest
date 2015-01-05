@@ -54,10 +54,9 @@ C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\component
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\contact\contact.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\data\data-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-controller.js \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-controller.js \
-C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-details-controller.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days-details.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-days.html \
+C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events-details-controller.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\events\events.html \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\localization\localization-service.js \
 C:\AirRemote\Ren-Fest\Application\RenFest\platforms\android\assets\www\components\localStorage\localStorge-service.js \

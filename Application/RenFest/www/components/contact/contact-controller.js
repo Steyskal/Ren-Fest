@@ -6,4 +6,4 @@ angular.module('contact.controllers', ['localStorage.services','data.services'])
                 var contactsData=LocalStorageService.getContacts();
                 $scope.contacts=DataService.getData(contactsData);
             }
-        ]);
+    ]);
