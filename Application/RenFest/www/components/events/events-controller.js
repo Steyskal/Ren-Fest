@@ -5,10 +5,15 @@
 angular.module('events.controllers',['data.services','localStorage.services'])
     .controller('EventsCtrl',['$scope','DataService','$stateParams','LocalStorageService',
         function ($scope,DataService,$stateParams,LocalStorageService) {
-             var eventsData=LocalStorageService.getEvents();
-             $scope.day=$stateParams.day;
-             $scope.events=DataService.getEventsData(eventsData,$stateParams.day);
-         }
+
+           var init=function(){
+                var eventsData=LocalStorageService.getEvents();
+                $scope.day=$stateParams.day;
+                $scope.events=DataService.getEventsData(eventsData,$stateParams.day);
+           };
+
+           init();
+        }
     ]);
 
 

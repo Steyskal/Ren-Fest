@@ -3,7 +3,12 @@ angular.module('renaissance.controllers', ['localStorage.services','data.service
 
     .controller('RenaissanceCtrl',['$scope','LocalStorageService','DataService',
             function($scope,LocalStorageService,DataService){
-                var renaissanceData=LocalStorageService.getRenaissance();
-                $scope.renaissance=DataService.getData(renaissanceData);
+
+                var init= function () {
+                    var renaissanceData=LocalStorageService.getRenaissance();
+                    $scope.renaissance=DataService.getData(renaissanceData);
+                };
+
+                init();
             }
         ]);
