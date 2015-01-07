@@ -8,7 +8,9 @@ angular.module('starter', ['ionic',
     'events.controllers',
     'eventsDetails.controllers',
     'localization.services',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'dcbImgFallback',
+    'home.controllers'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -28,9 +30,6 @@ angular.module('starter', ['ionic',
                             if(navigator.connection.type != Connection.NONE) {
                                 FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
                                     LocalStorageService.setData(data);
-                                    LocalStorageService.setContacts(data.$getRecord('contacts'));
-                                    LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
-                                    LocalStorageService.setEvents(data.$getRecord('events'));
                                 });
                                 //turn on internet
                             }else{
@@ -54,9 +53,6 @@ angular.module('starter', ['ionic',
                             LocalizationService.setLanguage(data);
                             FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
                                 LocalStorageService.setData(data);
-                                LocalStorageService.setContacts(data.$getRecord('contacts'));
-                                LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
-                                LocalStorageService.setEvents(data.$getRecord('events'));
                             });
                         });
                     }
@@ -78,14 +74,15 @@ angular.module('starter', ['ionic',
             .state('app', {
                 url: "/app",
                 abstract: true,
-                templateUrl: "templates/menu.html"
+                templateUrl: "components/menu/menu.html"
             })
 
             .state('app.home', {
                 url: "/home",
                 views: {
                     'menuContent' :{
-                        templateUrl: "templates/home.html"
+                        templateUrl: "components/home/home.html",
+                        controller:"HomeCtrl"
                     }
                 }
             })
@@ -210,7 +207,7 @@ angular.module('starter', ['ionic',
             //menu
             menu_name:"Menu",
             menu_ren_fest: "Renaissance festival",
-            menu_about_ren_fest:"About renaissance ",
+            menu_about_ren_fest:"About renaissance",
             menu_event:"Events",
             menu_map:"Map",
             menu_sponsors:"Sponsors",
@@ -223,18 +220,23 @@ angular.module('starter', ['ionic',
 
             //internet connection popup alert
             title:"Enable internet",
-            content:"For first usage please enable internet connection."
+            content:"For first usage please enable internet connection.",
+
+            //event details
+            timePlace:"Time and place",
+            details:"Description"
         });
 
         $translateProvider.translations('hr', {
             app_name: "Renesansni festival",
 
+
             //menu
             menu_name:"Izbornik",
             menu_ren_fest: "Renesansni festival",
             menu_about_ren_fest:"O renesansi",
-            menu_event:"Raspored programa",
-            menu_map:"Karta",
+            menu_event:"Program renesansnog festivala",
+            menu_map:"Gdje se nalazimo?",
             menu_sponsors:"Sponzori",
             menu_contact:"Kontakt",
 
@@ -246,7 +248,11 @@ angular.module('starter', ['ionic',
 
             //internet connection popup alert
             title:"Uključite internet",
-            content:"Prilikom prvog korištenja molimo vas da uključite internet."
+            content:"Prilikom prvog korištenja molimo vas da uključite internet.",
+
+            //event details
+            timePlace:"Vrijeme i mjesto:",
+            description:"Opis"
 
         });
 

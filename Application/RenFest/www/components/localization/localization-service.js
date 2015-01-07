@@ -7,6 +7,7 @@ angular.module('localization.services',['localStorage.services'])
     .factory('LocalizationService',['$q','$translate','LocalStorageService',
         function($q,$translate,LocalStorageService) {
             return {
+                //Method returns language that is used on smartphone
                 getLanguage: function () {
                     var q = $q.defer();
                     if (typeof navigator.globalization !== "undefined") {
@@ -22,6 +23,7 @@ angular.module('localization.services',['localStorage.services'])
                     }
                     return q.promise;
                 },
+                // Method save smartphone language into localStorage
                 setLanguage: function (lang) {
                     switch (lang) {
                         case "hr":

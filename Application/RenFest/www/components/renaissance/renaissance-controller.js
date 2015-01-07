@@ -5,7 +5,7 @@ angular.module('renaissance.controllers', ['localStorage.services','data.service
             function($scope,LocalStorageService,DataService){
 
                 var init= function () {
-                    var renaissanceData=LocalStorageService.getRenaissance();
+                    var renaissanceData=LocalStorageService.getSpecificData('renaissance');
                     $scope.renaissance=DataService.getData(renaissanceData);
                 };
 

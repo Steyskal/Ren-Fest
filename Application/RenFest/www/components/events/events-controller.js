@@ -7,7 +7,7 @@ angular.module('events.controllers',['data.services','localStorage.services'])
         function ($scope,DataService,$stateParams,LocalStorageService) {
 
            var init=function(){
-                var eventsData=LocalStorageService.getEvents();
+                var eventsData=LocalStorageService.getSpecificData('events');
                 $scope.day=$stateParams.day;
                 $scope.events=DataService.getEventsData(eventsData,$stateParams.day);
            };

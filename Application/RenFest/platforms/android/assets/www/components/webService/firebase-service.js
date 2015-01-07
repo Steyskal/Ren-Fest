@@ -2,6 +2,7 @@ angular.module('firebase.services', ['firebase'])
     .factory('FirebaseService',['$q','$firebase',
             function($q,$firebase) {
                 return {
+                    //Fetch and synchronize data from web service
                     getData: function(lang) {
                         var URL="https://renfest.firebaseio.com/"+lang;
                         var ref= new Firebase(URL);

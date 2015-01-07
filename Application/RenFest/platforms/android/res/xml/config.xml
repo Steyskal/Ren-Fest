@@ -31,6 +31,6 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="welcome" />
-    <preference name="SplashScreenDelay" value="4000" />
+    <preference name="SplashScreenDelay" value="5000" />
     <preference name="auto-hide-splash-screen" value="false" />
 </widget>

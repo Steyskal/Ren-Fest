@@ -86,3 +86,8 @@
 .footerImg{
     height: 43px;
 }
+
+.pict:active{
+    background-color: #f0b840;
+    opacity: 0.5;
+}
