@@ -1,24 +1,7 @@
 <ion-view title="{{'menu_contact' | translate}}">
     <ion-content class="has-header" ng-controller="ContactCtrl">
-      <!--  <div ng-repeat="item in contacts">
-            <img ng-if="item.img!='null'" ng-src="{{item.img}}" class="renaissanceImg">
-            <h2 ng-if="item.header!='null'" class="renaissanceHeader">{{item.header}}</h2>
-            <div class="row renaissanceUnderline contactInformation">
-                <div class="col-33">
-                    <h3 class="renaissanceSubheader contactText">{{item.title}}</h3>
-                </div>
-                <div class="col-67">
-                    <p class="contactText">{{item.information}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="bar">
-            <a class="centered" href="#/app/home">
-                <img class="footerImg" src="img/logo.jpg">
-            </a>
-        </div>  -->
+        <img src="img/contact.jpg"  class="renaissanceImg">
         <div ng-repeat="item in contacts">
-            <img ng-if="item.img!='null'" ng-src="{{item.img}}" class="renaissanceImg">
             <h2 ng-if="item.header!='null'" class="text-center">{{item.header}}</h2>
             <ion-item class="item item-icon-left ">
                 <i ng-if="item.title=='Address' || item.title=='Adresa'" class="icon ion-home energized"></i>

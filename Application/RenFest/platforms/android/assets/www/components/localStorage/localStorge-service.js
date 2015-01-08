@@ -6,7 +6,6 @@ angular.module('localStorage.services', ['ngStorage'])
 
     .factory('LocalStorageService',['$localStorage',
         function($localStorage) {
-
             return {
                 // Saving data to localStorage
                 setData:function(value){
@@ -14,11 +13,25 @@ angular.module('localStorage.services', ['ngStorage'])
                 },
                 // Fetch data from localStorage
                 getData:function(){
-                   return $localStorage.data;
+                    return $localStorage.data;
                 },
-                //Fetch specfic data from localStorage, etc. Events
-                getSpecificData:function(name){
-                   return $localStorage.data.$getRecord(name);
+                setContacts: function(value){
+                    $localStorage.contacts=value;
+                },
+                getContacts:function(){
+                    return $localStorage.contacts;
+                },
+                setRenaissance: function(value){
+                    $localStorage.renaissance=value;
+                },
+                getRenaissance:function(){
+                    return $localStorage.renaissance;
+                },
+                setEvents: function(value){
+                    $localStorage.events=value;
+                },
+                getEvents:function(){
+                    return $localStorage.events;
                 },
                 //Saving smartphone language to localStorage
                 setLanguage:function(value){
@@ -28,8 +41,6 @@ angular.module('localStorage.services', ['ngStorage'])
                 getLanguage:function(){
                     return $localStorage.language;
                 }
-
             }
-
         }
     ]);

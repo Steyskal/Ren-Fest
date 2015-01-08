@@ -87,7 +87,7 @@
     height: 43px;
 }
 
-.pict:active{
+.pict.activated{
     background-color: #f0b840;
     opacity: 0.5;
 }

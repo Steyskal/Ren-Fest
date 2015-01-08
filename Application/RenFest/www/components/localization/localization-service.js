@@ -2,7 +2,7 @@
  * Created by Matija on 2.1.2015..
  */
 
-angular.module('localization.services',['localStorage.services'])
+angular.module('localization.services',['localStorage.services','pascalprecht.translate'])
 
     .factory('LocalizationService',['$q','$translate','LocalStorageService',
         function($q,$translate,LocalStorageService) {

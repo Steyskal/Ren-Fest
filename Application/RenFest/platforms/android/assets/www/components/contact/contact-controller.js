@@ -5,7 +5,7 @@ angular.module('contact.controllers', ['localStorage.services','data.services'])
             function($scope,LocalStorageService,DataService) {
 
                 var init=function(){
-                    var contactsData=LocalStorageService.getSpecificData('contacts');
+                    var contactsData=LocalStorageService.getContacts();
                     $scope.contacts=DataService.getData(contactsData);
                 };
 

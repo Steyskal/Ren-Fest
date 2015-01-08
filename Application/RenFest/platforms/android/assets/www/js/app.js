@@ -9,13 +9,11 @@ angular.module('starter', ['ionic',
     'eventsDetails.controllers',
     'localization.services',
     'pascalprecht.translate',
-    'dcbImgFallback',
-    'home.controllers'
+    'dcbImgFallback'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
         $ionicPlatform.ready(function() {
-
             //check if exist data in localStorage
             if(LocalStorageService.getData()==null){
                 //localization
@@ -29,7 +27,11 @@ angular.module('starter', ['ionic',
                             //fetch data
                             if(navigator.connection.type != Connection.NONE) {
                                 FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
-                                    LocalStorageService.setData(data);
+                                    //save data
+                                    LocalStorageService.setEvents(data.$getRecord('events'));
+                                    LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
+                                    LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setData('true');
                                 });
                                 //turn on internet
                             }else{
@@ -52,7 +54,10 @@ angular.module('starter', ['ionic',
                         LocalizationService.getLanguage().then(function(data){
                             LocalizationService.setLanguage(data);
                             FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
-                                LocalStorageService.setData(data);
+                                LocalStorageService.setEvents(data.$getRecord('events'));
+                                LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
+                                LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                LocalStorageService.setData('true');
                             });
                         });
                     }
@@ -81,8 +86,7 @@ angular.module('starter', ['ionic',
                 url: "/home",
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/home/home.html",
-                        controller:"HomeCtrl"
+                        templateUrl: "components/home/home.html"
                     }
                 }
             })
@@ -203,7 +207,7 @@ angular.module('starter', ['ionic',
         //localization config
         $translateProvider.translations('en', {
             app_name: "Renaissance festival",
-
+            l:"en",
             //menu
             menu_name:"Menu",
             menu_ren_fest: "Renaissance festival",
@@ -229,13 +233,12 @@ angular.module('starter', ['ionic',
 
         $translateProvider.translations('hr', {
             app_name: "Renesansni festival",
-
-
+            l:"hr",
             //menu
             menu_name:"Izbornik",
             menu_ren_fest: "Renesansni festival",
             menu_about_ren_fest:"O renesansi",
-            menu_event:"Program renesansnog festivala",
+            menu_event:"Raspored programa",
             menu_map:"Gdje se nalazimo?",
             menu_sponsors:"Sponzori",
             menu_contact:"Kontakt",
