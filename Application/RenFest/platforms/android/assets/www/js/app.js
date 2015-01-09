@@ -12,7 +12,7 @@ angular.module('starter', ['ionic',
     'dcbImgFallback'
     ])
 
-    .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
+    .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService,$translate) {
         $ionicPlatform.ready(function() {
             //check if exist data in localStorage
             if(LocalStorageService.getData()==null){
@@ -46,22 +46,25 @@ angular.module('starter', ['ionic',
                         }
                     })
             }
-
             //update data
             if(LocalStorageService.getData()!=null){
-                if(window.Connection) {
-                    if(navigator.connection.type != Connection.NONE) {
-                        LocalizationService.getLanguage().then(function(data){
-                            LocalizationService.setLanguage(data);
-                            FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
-                                LocalStorageService.setEvents(data.$getRecord('events'));
-                                LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
-                                LocalStorageService.setContacts(data.$getRecord('contacts'));
-                                LocalStorageService.setData('true');
-                            });
-                        });
-                    }
-                }
+                LocalizationService.getLanguage()
+                    .then(function(data){
+                        LocalizationService.setLanguage(data);
+                    })
+                    .then(function(){
+                        //$translate.use(LocalStorageService.getLanguage());
+                        if(window.Connection) {
+                            if(navigator.connection.type != Connection.NONE) {
+                                FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
+                                    LocalStorageService.setEvents(data.$getRecord('events'));
+                                    LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
+                                    LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setData('true');
+                                });
+                            }
+                        }
+                    })
             }
 
             if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -258,7 +261,6 @@ angular.module('starter', ['ionic',
             description:"Opis"
 
         });
-
         $translateProvider.preferredLanguage("en");
         $translateProvider.fallbackLanguage("en");
     })

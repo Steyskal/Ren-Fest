@@ -46,22 +46,24 @@ angular.module('starter', ['ionic',
                         }
                     })
             }
-
             //update data
             if(LocalStorageService.getData()!=null){
-                if(window.Connection) {
-                    if(navigator.connection.type != Connection.NONE) {
-                        LocalizationService.getLanguage().then(function(data){
-                            LocalizationService.setLanguage(data);
-                            FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
-                                LocalStorageService.setEvents(data.$getRecord('events'));
-                                LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
-                                LocalStorageService.setContacts(data.$getRecord('contacts'));
-                                LocalStorageService.setData('true');
-                            });
-                        });
-                    }
-                }
+                LocalizationService.getLanguage()
+                    .then(function(data){
+                        LocalizationService.setLanguage(data);
+                    })
+                    .then(function(){
+                        if(window.Connection) {
+                            if(navigator.connection.type != Connection.NONE) {
+                                FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
+                                    LocalStorageService.setEvents(data.$getRecord('events'));
+                                    LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
+                                    LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setData('true');
+                                });
+                            }
+                        }
+                    })
             }
 
             if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -203,7 +205,6 @@ angular.module('starter', ['ionic',
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');
 
-        //TODO: stavi u ekstra .js
         //localization config
         $translateProvider.translations('en', {
             app_name: "Renaissance festival",
@@ -258,7 +259,6 @@ angular.module('starter', ['ionic',
             description:"Opis"
 
         });
-
         $translateProvider.preferredLanguage("en");
         $translateProvider.fallbackLanguage("en");
     })
