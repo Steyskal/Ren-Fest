@@ -7,7 +7,7 @@ angular.module('localStorage.services', ['ngStorage'])
     .factory('LocalStorageService',['$localStorage',
         function($localStorage) {
             return {
-                // Saving that data is in localStorage
+                // Saving 'true' that data it's in localStorage
                 setData:function(value){
                     $localStorage.data=value;
                 },

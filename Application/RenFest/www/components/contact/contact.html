@@ -1,7 +1,7 @@
 <ion-view title="{{'menu_contact' | translate}}">
     <ion-content class="has-header" ng-controller="ContactCtrl">
-        <img src="img/contact.jpg"  class="renaissanceImg">
         <div ng-repeat="item in contacts">
+            <img ng-if="item.img!='null'" ng-src="{{item.img}}" fallback-src="img/contact.jpg" class="renaissanceImg">
             <h2 ng-if="item.header!='null'" class="text-center">{{item.header}}</h2>
             <ion-item class="item item-icon-left ">
                 <i ng-if="item.title=='Address' || item.title=='Adresa'" class="icon ion-home energized"></i>

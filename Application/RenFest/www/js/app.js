@@ -33,7 +33,7 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
                                     LocalStorageService.setData('true');
                                 });
-                                //turn on internet
+                                //alert turn on internet
                             }else{
                                 $ionicPopup.alert({
                                     title:"Internet",
