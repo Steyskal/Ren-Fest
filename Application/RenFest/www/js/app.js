@@ -9,7 +9,8 @@ angular.module('starter', ['ionic',
     'eventsDetails.controllers',
     'localization.services',
     'pascalprecht.translate',
-    'dcbImgFallback'
+    'dcbImgFallback',
+    'sponsors.controllers'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -31,6 +32,7 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setEvents(data.$getRecord('events'));
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setSponsors(data.$getRecord('sponsors'));
                                     LocalStorageService.setData('true');
                                 });
                                 //alert turn on internet
@@ -59,6 +61,7 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setEvents(data.$getRecord('events'));
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setSponsors(data.$getRecord('sponsors'));
                                     LocalStorageService.setData('true');
                                 });
                             }
@@ -186,7 +189,8 @@ angular.module('starter', ['ionic',
                 url: "/sponsors",
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/sponsors/sponsors.html"
+                        templateUrl: "components/sponsors/sponsors.html",
+                        controller: 'SponsorsCtrl'
                     }
                 }
             })
@@ -197,6 +201,15 @@ angular.module('starter', ['ionic',
                     'menuContent' :{
                         templateUrl: "components/contact/contact.html",
                         controller: 'ContactCtrl'
+                    }
+                }
+            })
+
+            .state('app.help', {
+                url: "/help",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "components/help/help.html"
                     }
                 }
             })
@@ -217,6 +230,7 @@ angular.module('starter', ['ionic',
             menu_map:"Map",
             menu_sponsors:"Sponsors",
             menu_contact:"Contacts",
+            menu_help:"Help",
 
             //tabs
             day1:"Fri 28.8.",
@@ -243,7 +257,7 @@ angular.module('starter', ['ionic',
             menu_map:"Gdje se nalazimo?",
             menu_sponsors:"Sponzori",
             menu_contact:"Kontakt",
-
+            menu_help:"Pomoć",
             //tabs
             day1:"Pet 28.8.",
             day2:"Sub 29.8.",

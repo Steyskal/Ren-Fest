@@ -1,5 +1,13 @@
-<ion-view title="{{'menu_map' | translate}}">
-  <ion-content class="has-header">
-    <h1>Sponzori</h1>
-  </ion-content>
+<ion-view title="{{'menu_sponsors' | translate}}">
+    <ion-content class="has-header">
+        <ion-list >
+            <div ng-repeat="item in sponsors" class="item-text-wrap">
+                <ion-item class="item-thumbnail-left">
+                    <img ng-src="{{item.img}}" fallback-src="img/fallback-img.jpg">
+                    <br>
+                    <h2>{{item.name}}</h2>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
 </ion-view>

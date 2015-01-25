@@ -7,7 +7,7 @@ angular.module('localStorage.services', ['ngStorage'])
     .factory('LocalStorageService',['$localStorage',
         function($localStorage) {
             return {
-                // Saving that data is in localStorage
+                // Saving 'true' that data it's in localStorage
                 setData:function(value){
                     $localStorage.data=value;
                 },
@@ -38,6 +38,14 @@ angular.module('localStorage.services', ['ngStorage'])
                 //Return events data from localStorage
                 getEvents:function(){
                     return $localStorage.events;
+                },
+                //Saving sponsors data in localStorage
+                setSponsors: function(value){
+                    $localStorage.sponsors=value;
+                },
+                //Return sponsors data from localStorage
+                getSponsors:function(){
+                    return $localStorage.sponsors;
                 },
                 //Saving smartphone language to localStorage
                 setLanguage:function(value){

@@ -9,10 +9,11 @@ angular.module('starter', ['ionic',
     'eventsDetails.controllers',
     'localization.services',
     'pascalprecht.translate',
-    'dcbImgFallback'
+    'dcbImgFallback',
+    'sponsors.controllers'
     ])
 
-    .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService,$translate) {
+    .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
         $ionicPlatform.ready(function() {
             //check if exist data in localStorage
             if(LocalStorageService.getData()==null){
@@ -31,9 +32,10 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setEvents(data.$getRecord('events'));
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setSponsors(data.$getRecord('sponsors'));
                                     LocalStorageService.setData('true');
                                 });
-                                //turn on internet
+                                //alert turn on internet
                             }else{
                                 $ionicPopup.alert({
                                     title:"Internet",
@@ -53,13 +55,13 @@ angular.module('starter', ['ionic',
                         LocalizationService.setLanguage(data);
                     })
                     .then(function(){
-                        //$translate.use(LocalStorageService.getLanguage());
                         if(window.Connection) {
                             if(navigator.connection.type != Connection.NONE) {
                                 FirebaseService.getData(LocalStorageService.getLanguage()).then(function(data){
                                     LocalStorageService.setEvents(data.$getRecord('events'));
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
+                                    LocalStorageService.setSponsors(data.$getRecord('sponsors'));
                                     LocalStorageService.setData('true');
                                 });
                             }
@@ -187,7 +189,8 @@ angular.module('starter', ['ionic',
                 url: "/sponsors",
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/sponsors/sponsors.html"
+                        templateUrl: "components/sponsors/sponsors.html",
+                        controller: 'SponsorsCtrl'
                     }
                 }
             })
@@ -202,11 +205,19 @@ angular.module('starter', ['ionic',
                 }
             })
 
+            .state('app.help', {
+                url: "/help",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "components/help/help.html"
+                    }
+                }
+            })
+
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');
 
-        //TODO: stavi u ekstra .js
         //localization config
         $translateProvider.translations('en', {
             app_name: "Renaissance festival",
@@ -219,6 +230,7 @@ angular.module('starter', ['ionic',
             menu_map:"Map",
             menu_sponsors:"Sponsors",
             menu_contact:"Contacts",
+            menu_help:"Help",
 
             //tabs
             day1:"Fri 28.8.",
@@ -245,7 +257,7 @@ angular.module('starter', ['ionic',
             menu_map:"Gdje se nalazimo?",
             menu_sponsors:"Sponzori",
             menu_contact:"Kontakt",
-
+            menu_help:"Pomoć",
             //tabs
             day1:"Pet 28.8.",
             day2:"Sub 29.8.",
