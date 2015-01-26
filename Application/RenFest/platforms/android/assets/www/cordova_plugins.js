@@ -59,7 +59,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.12",
     "org.apache.cordova.splashscreen": "0.3.4",
     "org.apache.cordova.network-information": "0.2.13",
-    "org.apache.cordova.globalization": "0.3.4-dev"
+    "org.apache.cordova.globalization": "0.3.4-dev",
+    "org.apache.cordova.geolocation": "0.3.12-dev"
 }
 // BOTTOM OF METADATA
 });
