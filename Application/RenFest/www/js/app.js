@@ -10,7 +10,8 @@ angular.module('starter', ['ionic',
     'localization.services',
     'pascalprecht.translate',
     'dcbImgFallback',
-    'sponsors.controllers'
+    'sponsors.controllers',
+    'maps.controllers'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -180,7 +181,8 @@ angular.module('starter', ['ionic',
                 url: "/map",
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/map/map.html"
+                        templateUrl: "components/map/map.html",
+                        controller: 'MapCtrl'
                     }
                 }
             })
