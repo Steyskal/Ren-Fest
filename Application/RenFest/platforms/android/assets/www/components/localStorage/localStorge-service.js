@@ -47,6 +47,14 @@ angular.module('localStorage.services', ['ngStorage'])
                 getSponsors:function(){
                     return $localStorage.sponsors;
                 },
+                //Saving map data in localStorage
+                setMapMarkers: function(value){
+                    $localStorage.mapMarkers=value;
+                },
+                //Return map data from localStorage
+                getMapMarkers:function(){
+                    return $localStorage.mapMarkers;
+                },
                 //Saving smartphone language to localStorage
                 setLanguage:function(value){
                     $localStorage.language=value;

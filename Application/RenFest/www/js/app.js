@@ -12,7 +12,8 @@ angular.module('starter', ['ionic',
     'dcbImgFallback',
     'sponsors.controllers',
     'uiGmapgoogle-maps',
-    'maps.controllers'
+    'maps.controllers',
+    'mapGeolocation.services'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -35,6 +36,7 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
                                     LocalStorageService.setSponsors(data.$getRecord('sponsors'));
+                                    LocalStorageService.setMapMarkers(data.$getRecord('map'));
                                     LocalStorageService.setData('true');
                                 });
                                 //alert turn on internet
@@ -64,6 +66,7 @@ angular.module('starter', ['ionic',
                                     LocalStorageService.setRenaissance(data.$getRecord('renaissance'));
                                     LocalStorageService.setContacts(data.$getRecord('contacts'));
                                     LocalStorageService.setSponsors(data.$getRecord('sponsors'));
+                                    LocalStorageService.setMapMarkers(data.$getRecord('map'));
                                     LocalStorageService.setData('true');
                                 });
                             }
@@ -274,7 +277,7 @@ angular.module('starter', ['ionic',
 
             //event details
             timePlace:"Vrijeme i mjesto:",
-            description:"Opis"
+            details:"Opis"
 
         });
         $translateProvider.preferredLanguage("en");

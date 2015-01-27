@@ -1,4 +1,7 @@
 <ion-view title="{{'menu_map' | translate}}" >
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-location light" ng-click="currentLocation()"></button>
+    </ion-nav-buttons>
   <ion-content class="has-header" ng-controller="MapCtrl">
     <!--<div id="map" data-tap-disabled="true"></div>-->
       <div class="angular-google-map-container" data-tap-disabled="true">
