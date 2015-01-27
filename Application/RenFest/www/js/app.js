@@ -11,6 +11,7 @@ angular.module('starter', ['ionic',
     'pascalprecht.translate',
     'dcbImgFallback',
     'sponsors.controllers',
+    'uiGmapgoogle-maps',
     'maps.controllers'
     ])
 
@@ -215,6 +216,7 @@ angular.module('starter', ['ionic',
                     }
                 }
             })
+
 
 
         // if none of the above states are matched, use this as the fallback

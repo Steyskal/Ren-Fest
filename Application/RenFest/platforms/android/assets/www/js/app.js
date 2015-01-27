@@ -10,7 +10,9 @@ angular.module('starter', ['ionic',
     'localization.services',
     'pascalprecht.translate',
     'dcbImgFallback',
-    'sponsors.controllers'
+    'sponsors.controllers',
+    'uiGmapgoogle-maps',
+    'maps.controllers'
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -180,7 +182,8 @@ angular.module('starter', ['ionic',
                 url: "/map",
                 views: {
                     'menuContent' :{
-                        templateUrl: "components/map/map.html"
+                        templateUrl: "components/map/map.html",
+                        controller: 'MapCtrl'
                     }
                 }
             })
@@ -213,6 +216,7 @@ angular.module('starter', ['ionic',
                     }
                 }
             })
+
 
 
         // if none of the above states are matched, use this as the fallback
