@@ -55,9 +55,6 @@
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.ionicframework.renfest231185"
         },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.renfest231185"
-        },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.ionicframework.renfest231185"
         },

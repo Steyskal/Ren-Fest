@@ -1,65 +1,136 @@
-/**
- * Created by Matija on 7.12.2014..
- */
-
 angular.module('localStorage.services', ['ngStorage'])
 
+    /**
+     * @name LocalStorageService
+     * @desc Service for saving data to local storage
+     */
     .factory('LocalStorageService',['$localStorage',
         function($localStorage) {
             return {
-                // Saving 'true' that data it's in localStorage
+
+                /**
+                 * @name setData
+                 * @desc Saving 'true' - representing that data it's in localStorage
+                 * @param {string} value - true
+                 */
                 setData:function(value){
                     $localStorage.data=value;
                 },
-                // Return if data is in localStorage
+
+                /**
+                 * @name getData
+                 * @desc Looking if data is in localStorage
+                 * @returns {string} true/false
+                 */
                 getData:function(){
                     return $localStorage.data;
                 },
-                //Saving contacts data in localStorage
+
+                /**
+                 * @name setContacts
+                 * @desc Saving contacts data to localStorage
+                 * @param {Object[]|json} value - contacts data in json object
+                 */
                 setContacts: function(value){
                     $localStorage.contacts=value;
                 },
-                //Return contacts data from localStorage
+
+                /**
+                 * @name getContacts
+                 * @desc Return contacts data from localStorage
+                 * @returns {string|list}
+                 */
                 getContacts:function(){
                     return $localStorage.contacts;
                 },
-                //Saving renaissance data in localStorage
+
+                /**
+                 * @name setRenaissance
+                 * @desc Saving renaissance data to localStorage
+                 * @param {Object[]|json} value - renaissance data in json object
+                 */
                 setRenaissance: function(value){
                     $localStorage.renaissance=value;
                 },
-                //Return renaissance data from localStorage
+
+                /**
+                 * @name getRenaissance
+                 * @desc Return renaissance data from localStorage
+                 * @returns {string|list}
+                 */
                 getRenaissance:function(){
                     return $localStorage.renaissance;
                 },
-                //Saving events data in localStorage
+
+                /**
+                 * @name setEvents
+                 * @desc Saving events data to localStorage
+                 * @param {Object[]|json} value - events data in json object
+                 */
                 setEvents: function(value){
                     $localStorage.events=value;
                 },
-                //Return events data from localStorage
+
+                /**
+                 * @name getEvents
+                 * @desc Return events data from localStorage
+                 * @returns {string|list}
+                 */
                 getEvents:function(){
                     return $localStorage.events;
                 },
-                //Saving sponsors data in localStorage
+
+                /**
+                 * @name setSponsors
+                 * @desc Saving sponsors data to localStorage
+                 * @param {Object[]|json} value - sponsors data in json object
+                 */
                 setSponsors: function(value){
                     $localStorage.sponsors=value;
                 },
-                //Return sponsors data from localStorage
+
+                /**
+                 * @name getSponsors
+                 * @desc Return sponsors data from localStorage
+                 * @returns {string|list}
+                 */
                 getSponsors:function(){
                     return $localStorage.sponsors;
                 },
-                //Saving map data in localStorage
+
+                /**
+                 * @name setMapMarkers
+                 * @desc Saving map data to localStorage
+                 * @param {Object[]|json} value - map data in json object
+                 */
                 setMapMarkers: function(value){
                     $localStorage.mapMarkers=value;
                 },
-                //Return map data from localStorage
+
+                /**
+                 * @name getMapMarkers
+                 * @desc Return map data from localStorage
+                 * @returns {string|list}
+                 */
                 getMapMarkers:function(){
                     return $localStorage.mapMarkers;
                 },
+
                 //Saving smartphone language to localStorage
+                /**
+                 * @name setLanguage
+                 * @desc Saving smartphone language to localStorage
+                 * @param {string} value - language value
+                 */
                 setLanguage:function(value){
                     $localStorage.language=value;
                 },
-                //Return smartphone language
+
+                /**
+                 * @name getLanguage
+                 * @desc Return smartphone language from localStorage
+                 * @returns {string}
+                 */
                 getLanguage:function(){
                     return $localStorage.language;
                 }

@@ -1,12 +1,17 @@
-/**
- * Created by Matija on 2.1.2015..
- */
 
 angular.module('eventsDetails.controllers',['data.services'])
 
+    /**
+     * @name EventsDetailsCtrl
+     * @desc Application Controller for  events-day-details screen
+     */
     .controller('EventsDetailsCtrl',['$scope','$stateParams','DataService',
         function($scope,$stateParams,DataService) {
 
+            /**
+             * @name init
+             * @desc Shows details about events for on screen
+             */
             var init=function(){
                 $scope.detail=[];
                 $scope.description=$stateParams.description;

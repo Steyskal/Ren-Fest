@@ -1,13 +1,19 @@
-/**
- * Created by Matija on 2.1.2015..
- */
 
 angular.module('localization.services',['localStorage.services','pascalprecht.translate'])
 
+    /**
+     * @name LocalizationService
+     * @desc Service for localization
+     */
     .factory('LocalizationService',['$q','$translate','LocalStorageService',
         function($q,$translate,LocalStorageService) {
             return {
-                //Method returns language that is used on smartphone
+
+                /**
+                 * @name getLanguage
+                 * @desc Looking for smartphone language set in settings
+                 * @returns {string} language that is used on smartphone
+                 */
                 getLanguage: function () {
                     var q = $q.defer();
                     if (typeof navigator.globalization !== "undefined") {
@@ -23,7 +29,12 @@ angular.module('localization.services',['localStorage.services','pascalprecht.tr
                     }
                     return q.promise;
                 },
-                // Method save smartphone language into localStorage
+
+                /**
+                 * @name setLanguage
+                 * @param {string} lang - language value
+                 * @desc save smartphone language into localStorage
+                 */
                 setLanguage: function (lang) {
                     switch (lang) {
                         case "hr":

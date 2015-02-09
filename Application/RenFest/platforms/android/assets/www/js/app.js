@@ -280,7 +280,7 @@ angular.module('starter', ['ionic',
             details:"Opis"
 
         });
-        //$translateProvider.preferredLanguage("en");
+        $translateProvider.preferredLanguage("en");
         $translateProvider.fallbackLanguage("en");
     })
 

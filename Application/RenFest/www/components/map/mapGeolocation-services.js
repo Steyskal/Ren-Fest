@@ -1,21 +1,32 @@
-/**
- * Created by Matija on 27.1.2015..
- */
 
 angular.module('mapGeolocation.services',[])
 
+    /**
+     * @name MapGeolocationService
+     * @desc Service for user geolocation
+     */
     .factory('MapGeolocationService',['$q',
         function($q) {
+
             return {
-                //Method returns users geolocation
+                //TODO: refactor
+                /**
+                 * @name getLocation
+                 * @desc method returns user geolocation
+                 * @returns {string} geolocation coordinates
+                 */
                 getLocation: function () {
-                    var q = $q.defer();
-                    navigator.geolocation.getCurrentPosition(function(pos) {
+                   /* var q = $q.defer();
+                    alert(1);
+                    window.navigator.geolocation.getCurrentPosition(onSuccess,onError).then(function(response) {
+                        alert(2);
                         q.resolve(pos);
                     }, function (error) {
                         q.reject(error);
                     });
-                    return q.promise;
+                    return q.promise;*/
+                    window.navigator.geolocation.getCurrentPosition();
+
                 }
             }
         }
