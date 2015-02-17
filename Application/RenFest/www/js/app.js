@@ -15,6 +15,7 @@ angular.module('starter', ['ionic',
     'uiGmapgoogle-maps',
     'maps.controllers',
     'mapGeolocation.services'
+
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
@@ -202,6 +203,7 @@ angular.module('starter', ['ionic',
                 }
             })
 
+
             .state('app.contact', {
                 url: "/contact",
                 views: {
@@ -244,6 +246,7 @@ angular.module('starter', ['ionic',
             day1:"Fri 28.8.",
             day2:"Sat 29.8.",
             day3:"Sun 30.8.",
+            exit:"Exit",
 
             //internet connection popup alert
             title:"Enable internet",
@@ -270,6 +273,7 @@ angular.module('starter', ['ionic',
             day1:"Pet 28.8.",
             day2:"Sub 29.8.",
             day3:"Ned 30.8.",
+            exit:"Izlaz",
 
 
             //internet connection popup alert
