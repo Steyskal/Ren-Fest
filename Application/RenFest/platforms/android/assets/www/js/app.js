@@ -1,5 +1,6 @@
 
 angular.module('starter', ['ionic',
+    'ui.router',
     'localStorage.services',
     'firebase.services',
     'data.services',

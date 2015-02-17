@@ -9,24 +9,27 @@ angular.module('mapGeolocation.services',[])
         function($q) {
 
             return {
-                //TODO: refactor
                 /**
                  * @name getLocation
                  * @desc method returns user geolocation
-                 * @returns {string} geolocation coordinates
+                 * @returns {object} user geolocation coordinates
                  */
                 getLocation: function () {
-                   /* var q = $q.defer();
-                    alert(1);
-                    window.navigator.geolocation.getCurrentPosition(onSuccess,onError).then(function(response) {
-                        alert(2);
-                        q.resolve(pos);
-                    }, function (error) {
+                    var q = $q.defer();
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        var key=Math.floor((Math.random()*10000)+1);
+                        var userLocation= {
+                            idKey:key,
+                            latitude:position.coords.latitude,
+                            longitude:position.coords.longitude,
+                            icon: 'https://maps.gstatic.com/mapfiles/ms2/micons/blue.png',
+                            title: 'Your location'
+                        };
+                        q.resolve(userLocation);
+                    },function(error){
                         q.reject(error);
-                    });
-                    return q.promise;*/
-                    window.navigator.geolocation.getCurrentPosition();
-
+                    },{maximumAge:60000, timeout:5000, enableHighAccuracy:true});
+                    return q.promise;
                 }
             }
         }

@@ -1,15 +1,43 @@
 
-angular.module('maps.controllers',['data.services','localStorage.services','uiGmapgoogle-maps','mapGeolocation.services'])
+angular.module('maps.controllers',['data.services','localStorage.services','uiGmapgoogle-maps','mapGeolocation.services','ui.router'])
 
     /**
      * @name MapCtrl
      * @desc Application Controller for map screen
      */
-    .controller('MapCtrl',['$scope','DataService','LocalStorageService','MapGeolocationService',
-        function($scope,DataService, LocalStorageService, MapGeolocationService) {
+    .controller('MapCtrl',['$scope','DataService','LocalStorageService','MapGeolocationService','$state',
+        function($scope,DataService, LocalStorageService, MapGeolocationService,$state) {
 
               var markersData=LocalStorageService.getMapMarkers();
               $scope.markers=DataService.getData(markersData);
+              var userLocation=LocalStorageService.getUserLocation();
+
+              if(userLocation.idKey!=undefined){
+                  $scope.markers.push(userLocation);
+                  $scope.map = {
+                      center: {
+                          latitude: userLocation.latitude,
+                          longitude: userLocation.longitude
+                      },
+                      zoom: 16
+                  };
+                  var resetLocation= {
+                      idKey:undefined,
+                      latitude:undefined,
+                      longitude:undefined,
+                      icon: undefined,
+                      title: undefined
+                  };
+                  LocalStorageService.setUserLocation(resetLocation);
+              }else{
+                  $scope.map = {
+                      center: {
+                          latitude: 46.1617581,
+                          longitude: 16.8316687
+                      },
+                      zoom: 16
+                  };
+              }
 
              /**
               * @name init
@@ -17,14 +45,6 @@ angular.module('maps.controllers',['data.services','localStorage.services','uiGm
               */
               var init=function ()
               {
-                   $scope.map = {
-                       center: {
-                           latitude: 46.1617581,
-                           longitude: 16.8316687
-                       },
-                       zoom: 16
-                   };
-
                    $scope.options = {
                        scrollwheel: false
                    };
@@ -41,29 +61,14 @@ angular.module('maps.controllers',['data.services','localStorage.services','uiGm
                        $scope.windowOptions.show = false;
                    };
               };
-                init();
-                //TODO:
-                // dobim svoju trenutnu lokaciju i u mobu, stavim u polje markera, ali mi ne updejta
-                // u viewu, a trebao bi automatski
-                // treba se igrati sa $scope.$applay() i $scope.$watch();
-                $scope.currentLocation=function()
-                {
-                    navigator.geolocation.getCurrentPosition(function(position){
-                                var key=Math.floor((Math.random()*10000)+1);
-                                //alert("a: "+position.coords.latitude + ", b: "+position.coords.longitude + " key:"+key);
-                                $scope.markers.push({
-                                    idKey:key,
-                                    latitude:position.coords.latitude,
-                                    longitude:position.coords.longitude,
-                                    icon: 'https://maps.gstatic.com/mapfiles/ms2/micons/blue.png',
-                                    title: 'Trenutna pozicija'
-                                });
-                            //$scope.$apply();
-                    },function(error){
-                        return;
-                    },{maximumAge:60000, timeout:5000, enableHighAccuracy:true});
-                    //$scope.$apply();
-                    //init();
-                };
+
+              init();
+
+              $scope.currentLocation=function() {
+                MapGeolocationService.getLocation().then(function(response){
+                    LocalStorageService.setUserLocation(response);
+                    $state.go($state.current, {}, {reload: true});
+                });
+              };
         }
     ]);
