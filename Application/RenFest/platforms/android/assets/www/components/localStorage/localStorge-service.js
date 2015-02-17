@@ -116,6 +116,24 @@ angular.module('localStorage.services', ['ngStorage'])
                     return $localStorage.mapMarkers;
                 },
 
+                /**
+                 * @name setUserLocation
+                 * @desc Saving user location to localStorage
+                 * @param {string} value - user location (long,lat)
+                 */
+                setUserLocation: function(value){
+                    $localStorage.userLocation=value;
+                },
+
+                /**
+                 * @name getUserLocation
+                 * @desc Return user location from localStorage
+                 * @returns {string}
+                 */
+                getUserLocation:function(){
+                    return $localStorage.userLocation;
+                },
+
                 //Saving smartphone language to localStorage
                 /**
                  * @name setLanguage
