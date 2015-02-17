@@ -9,9 +9,9 @@
 }
 
 .centered{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+    display: block!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
 }
 
 .imageContainer{
@@ -103,4 +103,10 @@
     margin-left: 5%;
     height: 90%;
     width: 90%;
+}
+
+.sponsorDetailImage{
+    width: 50%;
+    height: 50%;
+    border-width: 0 !important;
 }
