@@ -14,12 +14,19 @@ angular.module('starter', ['ionic',
     'sponsors.controllers',
     'uiGmapgoogle-maps',
     'maps.controllers',
-    'mapGeolocation.services'
+    'mapGeolocation.services',
+    'menu.controllers'
+
     ])
 
     .run(function($ionicPlatform,$ionicPopup,FirebaseService,LocalStorageService,LocalizationService) {
         $ionicPlatform.ready(function() {
             //check if exist data in localStorage
+            if(LocalStorageService.getMenu()==null){
+                var menu="menu1";
+                LocalStorageService.setMenu(menu);
+            }
+
             if(LocalStorageService.getData()==null){
                 //localization
                 LocalizationService.getLanguage()
@@ -86,11 +93,15 @@ angular.module('starter', ['ionic',
     })
 
     .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+
+
+
         $stateProvider
             .state('app', {
                 url: "/app",
                 abstract: true,
-                templateUrl: "components/menu/menu.html"
+                templateUrl: "components/menu/menu.html",
+                controller: "MenuCtrl"
             })
 
             .state('app.home', {
@@ -112,6 +123,18 @@ angular.module('starter', ['ionic',
                 }
             })
 
+            /*.state('app.renaissance2', {
+                url: "/renaissance",
+                views: {
+                    'menuContent' :{
+                        templateUrl: "components/renaissance/renaissance2.html",
+                        controller: "RenaissanceCtrl"
+                    }
+                }
+            })*/
+
+
+
             .state('app.events', {
                 url: "/events",
                 abstract:true,
@@ -131,6 +154,7 @@ angular.module('starter', ['ionic',
                     }
                 }
             })
+
 
             .state('app.events.day1Details', {
                 url: "/day1/:description/:details/:time/:title/:img/:img2",
@@ -202,6 +226,7 @@ angular.module('starter', ['ionic',
                 }
             })
 
+
             .state('app.contact', {
                 url: "/contact",
                 views: {
@@ -244,6 +269,7 @@ angular.module('starter', ['ionic',
             day1:"Fri 28.8.",
             day2:"Sat 29.8.",
             day3:"Sun 30.8.",
+            exit:"Exit",
 
             //internet connection popup alert
             title:"Enable internet",
@@ -270,6 +296,7 @@ angular.module('starter', ['ionic',
             day1:"Pet 28.8.",
             day2:"Sub 29.8.",
             day3:"Ned 30.8.",
+            exit:"Izlaz",
 
 
             //internet connection popup alert

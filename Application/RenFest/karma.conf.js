@@ -19,6 +19,7 @@ module.exports = function(config) {
       'www/lib/angular-ui-router/release/angular-ui-router.js',
       'test/lib/angular/angular-mocks.js',
       'www/lib/ionic/js/ionic.js',
+      'www/lib/ionic/js/ionic-angular.js',
       'www/js/app.js',
       'www/lib/ngstorage/ngStorage.js',
       'www/lib/bower-angular-translate-2.5.2/angular-translate.js',

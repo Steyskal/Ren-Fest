@@ -151,6 +151,20 @@ angular.module('localStorage.services', ['ngStorage'])
                  */
                 getLanguage:function(){
                     return $localStorage.language;
+                },
+
+
+                setMenu:function(value){
+                    $localStorage.menu=value;
+                },
+
+                /**
+                 * @name getLanguage
+                 * @desc Return smartphone language from localStorage
+                 * @returns {string}
+                 */
+                getMenu:function(){
+                    return $localStorage.menu;
                 }
             }
         }
